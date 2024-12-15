@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 100%);
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  overflow: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: rgb(248, 248, 248);
+  background: black;
+  font-family: "Archivo", sans-serif;
+  font-size: 1.3rem;
+
+}
+
+h1 {
+  font-size: 7rem;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  text-align: end;
+  color: rgb(248, 248, 248);
+  text-shadow: -4px 4px 3px black;
+  width: 70vw;
+  margin-right: 3rem;
+  margin-left: auto;
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 5rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(248, 248, 248);
+  text-shadow: -4px 4px 3px black;
+  font-family: "Archivo Black", sans-serif;
+  width: 40vw;
+  margin-right: auto;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
+h1 span {
+  font-size: 7rem;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  text-align: end;
+  color: red;
+  margin-right: 0;
+  margin-left: auto;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+span {
+  color: red;
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  width: 30vw;
+  margin-right: auto;
+  margin-left: 5rem;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  /* Stack wrappers vertically */
+  gap: 40px;
+  /* Space between wrappers */
+  padding: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin: auto;
+  background: black;
+  overflow: hidden;
+}
+
+.wrapper::after {
+  width: 98%;
+  height: 48px;
+  content: "";
+  position: absolute;
+  border: solid 1px white;
+}
+
+.box {
+  padding: 1rem;
+  width: calc(25% - 10px);
+}
+
+.boxes {
+  position: relative;
+  left: -50px;
+}
+
+.upScroll {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateY(100%);
+  /* Initially off-screen (down) */
+  position: relative;
+  transition: opacity 1s ease, transform 1s ease;
+  /* Smooth transitions for opacity and movement */
+  background-image: url('../img/start_screen.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+.shake {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  border: 2px solid red;
+}
+.shake--small {
+  font-size: 3rem;
+  border: none;
+}
+
+.red-txt {
+  position: relative;
+  display: inline-block;
+}
+
+.stepIntoWorld {
+  transition: opacity 1s ease, transform 1s ease;
+  /* Smooth transitions for opacity and movement */
+  background-image: url('../img/first_contact.webp');
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-color: black;
+}
+
+/* Maak sectie 4 aanvankelijk verborgen */
+.heartRace {
+  transition: opacity 1s ease, transform 1s ease;
+  /* Smooth transitions for opacity and movement */
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  /* Maakt de sectie niet interactief totdat deze verschijnt */
+  transition: opacity 1s ease;
+  /* transform: translateY(100%); */
+}
+.heartRace h2 {
+  width: 90vw;
+  font-size: 3rem;
+  text-align: start;
+}
+
+.final h2 {
+  width: 90vw;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40vh auto ;
+}
+
+.heartRace__svvg
+{
+  margin-top: -5rem;
+  width: 80rem;
+  height: auto;
+}
+
+/* Stijl voor de pulse cirkels */
+.pulse-circles {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  display: flex;
+  gap: 10px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 0, 0, 0.7);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.burden
+{
+  background-color: black;
+  opacity: 0;
+  margin-right: -40vw;
+  margin-left: 0;
+}
+
+.final
+{
+  background-color: black;
+  opacity: 0;
+}
+
+/* Pulse animatie voor de cirkels */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.word {
+  position: absolute;
+  width: 100%;
+}
